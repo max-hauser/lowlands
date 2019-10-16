@@ -12,29 +12,11 @@ var categorien_knop = document.querySelector("#categorien_knop");
 var audio_btn = document.querySelectorAll("#audio_btn");
 var show_favorites_btn = document.querySelector("#show_favorites");
 var toggle_favorite_btn = document.querySelector("#favorite_btn");
-
+var favorietenLijst = [];
 
 
 
 // Functies
-
-function toggle_favorite(e) {
-	e.preventDefault();
-	
-	var artist = this.closest("article").querySelector("h2").textContent;
-	localStorage.setItem(artist, artist);
-}
-
-function show_favorites() {
-	
-// Store
-localStorage.setItem("lastname", "Smith");
-
-// Retrieve
- console.log(localStorage.getItem("lastname"));
-}
-
-
 
 function audio_handler(e) {
 	// Speelt het juiste muziekje af
@@ -76,12 +58,8 @@ function toggleCategories(e) {
 	// Laat de categoriën menu zien, of niet
 	e.preventDefault();
 	var categorien = document.querySelector("#categorien");
-
-	if (categorien.className == "") {
-		categorien.classList.add("show");
-	} else {
-		categorien.classList.remove("show");
-	}
+	
+	categorien.classList.toggle("open");
 
 }
 
@@ -95,5 +73,3 @@ categorien_knop.addEventListener('click', toggleCategories);
 audio_btn.forEach(function (audio) {
 	audio.addEventListener('click', audio_handler);
 });
-show_favorites_btn.addEventListener('click', show_favorites);
-toggle_favorite_btn.addEventListener('click', toggle_favorite);
