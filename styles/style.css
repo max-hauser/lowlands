@@ -11,6 +11,7 @@
 }
 
 @font-face {
+	/* https://fonts.google.com/ */
 	font-family: Open89;
 	src: url("../fonts/LLHvH-Open89.woff2") format("woff2"), url("../fonts/LLHvH-Open89.woff") format("woff");
 	font-style: normal;
@@ -49,6 +50,10 @@ a {
 }
 
 a:hover {
+	color: darkblue;
+}
+
+a:active, a:focus, a:visited{
 	color: darkblue;
 }
 
@@ -122,6 +127,7 @@ header nav li a:hover {
 }
 
 header nav ul li:last-child a::after {
+	/* https://fontawesome.com/ */
 	content: '\f0d7';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -270,8 +276,6 @@ main ul:nth-child(1) {
 	width: 100%;
 }
 
-
-
 main ul:nth-child(2),
 main ul:nth-child(1) {
 	list-style-type: none;
@@ -288,7 +292,9 @@ main ul:nth-child(2) {
 	display: none;
 }
 
-main ul li {align-self: center;}
+main ul li {
+	align-self: center;
+}
 
 main ul:nth-child(2).show {
 	display: flex;
@@ -344,9 +350,14 @@ form#categorien.open {
 	display: flex;
 }
 
+/*
+BRON: https://codersblock.com/blog/checkbox-trickery-with-css/ + Didier + Sonja
+*/
+
 form#categorien input[type="checkbox"] {
-/*	visibility: hidden;*/
 	display: flex;
+	position: relative;
+	z-index: -1;
 }
 
 form#categorien input[type="checkbox"] + label {
@@ -354,7 +365,6 @@ form#categorien input[type="checkbox"] + label {
 	padding: 15px;
 	color: #fff;
 	transition: 0.3s;
-/*	user-select: none;*/
 }
 
 form div {
@@ -366,13 +376,18 @@ form#categorien input[type="checkbox"] + label:hover {
 	cursor: pointer;
 }
 
+form#categorien input[type="checkbox"]:focus{
+	border: none;
+}
+
 form#categorien input[type="checkbox"]:focus + label {
-	background-color: red;
-	border: 3px solid yellow;
+	background-color: #0C38CC;
+	/* border: 3px solid yellow; */
 }
 
 form#categorien input[type="checkbox"]:checked + label{
-	background-color: purple;
+	border: 1px solid #fff;
+	text-transform: capitalize;
 }
 
 
@@ -720,8 +735,6 @@ Media Queries
 HEADER
 **********************/
 
-body:not(.home) header {}
-
 body:not(.home) header nav ul {
 	justify-content: flex-start;
 	padding: 0 15vw;
@@ -829,9 +842,3 @@ FOOTER
 body:not(.home) footer section {
 	padding: 0 10vw;
 }
-
-/**********************
-MEDIA QUERIES
-**********************/
-
-@media screen and (min-width: 1080px) {}

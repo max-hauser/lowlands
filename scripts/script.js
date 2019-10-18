@@ -35,8 +35,6 @@ function Artiest() {
 	this.genre = "";
 }
 
-
-
 //functies
 
 function closeMenu() {
@@ -82,11 +80,6 @@ function createTabs() {
 	});
 }
 
-//loadArtiesten();
-//createTabs();
-//tabview();
-
-
 function tabview() {
 
 	var inner = document.querySelectorAll(".inner");
@@ -102,8 +95,6 @@ function tabview() {
 		artist_options.appendChild(favor_artist);
 		favor_artist.appendChild(favorBtn).src = "images/favorite.png";
 		favor_artist.appendChild(favorBtn).classList.add("favoriteBtn");
-
-
 	});
 }
 

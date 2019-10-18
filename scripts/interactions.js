@@ -15,6 +15,10 @@ var audio_btn = document.querySelectorAll("#audio_btn");
 
 // Functies
 
+/*
+BRON: W3SCHOOLS
+*/
+
 function audio_handler(e) {
 	// Speelt het juiste muziekje af
 	e.preventDefault();
