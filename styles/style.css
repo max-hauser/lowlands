@@ -5,7 +5,9 @@
 }
 
 *:focus {
-	outline: 0;
+	outline: none;
+	border: none;
+	border-bottom: 3px solid #fff;
 }
 
 @font-face {
@@ -343,7 +345,7 @@ form#categorien.open {
 }
 
 form#categorien input[type="checkbox"] {
-	visibility: hidden;
+/*	visibility: hidden;*/
 	display: flex;
 }
 
@@ -352,7 +354,7 @@ form#categorien input[type="checkbox"] + label {
 	padding: 15px;
 	color: #fff;
 	transition: 0.3s;
-	user-select: none;
+/*	user-select: none;*/
 }
 
 form div {
@@ -364,25 +366,18 @@ form#categorien input[type="checkbox"] + label:hover {
 	cursor: pointer;
 }
 
-form#categorien input[type="checkbox"]:checked + label {
-	background-color: #0C38CC;
+form#categorien input[type="checkbox"]:focus + label {
+	background-color: red;
+	border: 3px solid yellow;
 }
+
+form#categorien input[type="checkbox"]:checked + label{
+	background-color: purple;
+}
+
 
 /* Einde groene optie balk boven de main content */
 
-/*
-main section {
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	z-index: 99;
-	width: 100vw;
-	top: 360px;
-	padding: 2em 0em 5em 20m;
-	columns: 1;
-	display: grid;
-}
-*/
 
 main section {
 	background-size: cover;
